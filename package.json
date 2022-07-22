@@ -9,9 +9,25 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.9.3",
+    "@emotion/styled": "^11.9.3",
+    "@mui/icons-material": "^5.8.4",
+    "@sendgrid/mail": "^7.7.0",
+    "axios": "^0.27.2",
+    "framer-motion": "^6.3.11",
+    "graphql-request": "^4.3.0",
+    "mailgun-js": "^0.22.0",
     "next": "12.1.6",
+    "next-connect": "^0.12.2",
+    "nextjs-progressbar": "^0.0.14",
+    "nodemailer": "^6.7.5",
     "react": "18.1.0",
-    "react-dom": "18.1.0"
+    "react-circular-progressbar": "^2.0.4",
+    "react-dom": "18.1.0",
+    "react-horizontal-scrolling-menu": "^2.8.2",
+    "react-icons": "^4.4.0",
+    "react-image-scroller": "^0.3.0",
+    "react-scroll": "^1.8.7"
   },
   "devDependencies": {
     "eslint": "8.17.0",

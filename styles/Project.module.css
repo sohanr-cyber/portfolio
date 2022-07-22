@@ -1,0 +1,140 @@
+.container {
+  background: var(--bgColor);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: aquamarine;
+  text-align: center;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.wrapper {
+  padding: 60px 15px;
+  /* padding-bottom: 0; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* max-width: 650px; */
+}
+.Commentswrapper {
+  padding: 15px;
+
+  /* max-width: 650px; */
+}
+.title {
+  font-size: 150%;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  font-weight: bold;
+}
+
+/* .pics {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pic {
+  width: 80vw;
+  height: 60vh;
+  background-color: rgb(242, 242, 242);
+} */
+
+.tags {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  justify-content: center;
+  margin: 15px 0;
+  flex-wrap: wrap;
+}
+
+.tags span {
+  padding: 3px;
+  background: var(--btn);
+  border-radius: 3px;
+  cursor: pointer;
+  color: rgb(252, 219, 175);
+  font-weight: 550;
+}
+
+/* comments */
+
+.heading {
+  background-color: rgb(153, 227, 248);
+  text-align: center;
+  font-size: 140%;
+  padding: 3px;
+  padding-bottom: 4px;
+  border-radius: 5px;
+}
+
+.review {
+  /* border: 1px solid lightgrey; */
+  border-radius: 5px;
+  padding: 5px;
+  background-color: var(--field);
+  margin: 10px 0;
+  box-shadow: 1px 1px 1px 1px var(--lightgrey);
+}
+
+.name,
+.email {
+  text-align: right;
+  font-weight: 535;
+  color: grey;
+}
+
+.add {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.add textarea {
+  width: 100%;
+  height: 90px;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  background-color: var(--field);
+  padding: 15px;
+  color: var(--btn);
+  margin: 10px 0;
+}
+
+.btn {
+  text-align: center;
+  padding: 10px;
+  background-color: var(--btn);
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  position: relative;
+  min-width: 200px;
+}
+
+.pics {
+  border: 1px solid lightgrey;
+  box-shadow: 2px 2px 2px 2px rgb(0, 0, 255, 0.2);
+}
+
+.link {
+  margin: 3px 0;
+}
+
+.link span {
+  color: aqua;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.link span:hover {
+  color: white;
+}

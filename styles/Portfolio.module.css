@@ -1,0 +1,120 @@
+.wrapper {
+  /* min-height: 150vh; */
+  max-height: 160vh;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: var(--bgColor);
+  z-index: 110;
+  flex-direction: column;
+  color: aquamarine;
+  max-width: 100%;
+}
+
+.heading {
+  font-size: 150%;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+  font-weight: bold;
+}
+.heading span {
+  color: var(--pink);
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  overflow-x: scroll;
+  margin: 15px;
+  font-size: 90%;
+  max-width: 90%;
+  color: black;
+  justify-content: flex-start;
+}
+
+.flex .item {
+  /* flex-grow: 2; */
+  background: var(--btn);
+  padding: 3px;
+  border-radius: 5px;
+  text-align: center;
+  min-width: 75px;
+  flex-grow: 100px;
+  font-size: 85%;
+  cursor: pointer;
+  color: aqua;
+}
+
+.flex::-webkit-scrollbar {
+  width: 0px;
+}
+
+.projects {
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  max-height: 93vh;
+  padding: 15px 0;
+  overflow: scroll;
+}
+
+.projects .card {
+  /* background: white; */
+  background: var(--btn);
+
+  font-size: 70%;
+
+  text-align: center;
+  box-shadow: 2px 2px 2px 2px rgba(35, 34, 43, 0.4);
+  color: aquamarine;
+  text-align: center;
+  padding: 5px;
+  max-width: 170px;
+  cursor: pointer;
+}
+
+.card .info {
+  margin: 5px;
+}
+
+.card .info:hover {
+  color: white;
+}
+
+.card .info .name {
+  /* margin: 5px 0; */
+  font-weight: bold;
+}
+
+.pic {
+  position: relative;
+  /* overflow: hidden; */
+}
+
+.pic img {
+  width: 100%;
+  height: 100%;
+}
+
+.image {
+}
+
+.image:hover {
+  transform: scale(1.1);
+  transition: ease-in-out 350ms;
+}
+
+@media (max-width: 480px) {
+  .flex .item {
+    min-width: 55px;
+  }
+}
+
+@media (max-width: 400px) {
+  .flex .item {
+    min-width: 55px;
+  }
+}

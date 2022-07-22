@@ -1,0 +1,76 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-height: 100vh;
+  min-height: 100vh;
+  text-align: center;
+  background: linear-gradient(#000000, #000249);
+  overflow: hidden;
+  color: aquamarine;
+}
+
+.name {
+  font-family: "Dancing Script", cursive;
+  font-size: 250%;
+  z-index: 2;
+  min-width: 300px;
+  background: -webkit-linear-gradient(
+    360deg,
+    rgb(255, 0, 140),
+    rgb(37, 154, 238)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.work {
+  min-width: 320px;
+  background: -webkit-linear-gradient(
+    360deg,
+    rgb(255, 0, 140),
+    rgb(37, 154, 238)
+  );
+  font-size: 110%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.about {
+  background: linear-gradient(rgba(115, 115, 115, 0.2), rgba(0, 14, 57, 0.2));
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+  max-width: 230px;
+  /* min-width: 150px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: visible;
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+  background: linear-gradient(rgb(3, 14, 93, 0.3), rgb(255, 255, 255, 0.3));
+  width: 100px;
+  z-index: 1;
+}
+
+
+.circle1 {
+  bottom: -20px;
+  left: -20px;
+}
+
+.circle2 {
+  bottom: -20px;
+  width: 70px;
+  right: 100px;
+}
+
+.pic {
+  border-radius: 10px;
+  overflow: hidden;
+}
