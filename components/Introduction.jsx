@@ -14,7 +14,7 @@ const Introduction = () => {
         // whileInView={{ scale: [0, 1] }}
         // transition={{ duration: 1, ease: "easeInOut" }}
         >
-          <div className={styles.name}>Radnom Name</div>
+          <div className={styles.name}>Md Sohanur Rahman Sohan</div>
           <div className={styles.work}>
             Full-stack Developer & UI/UX Designer
           </div>

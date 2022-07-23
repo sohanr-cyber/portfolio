@@ -37,13 +37,13 @@ const Contact = () => {
         <div className={styles.logo}>
           <Image src="/assets/mobile.png" width="35px" height="35px" alt="" />
         </div>
-        <div className={styles.number}>+1 (123) 456-789</div>
+        <div className={styles.number}>+8801744329811</div>
       </div>
       <div className={styles.email}>
         <div className={styles.logo}>
           <Image src="/assets/email.png" width="35px" height="35px" alt="" />
         </div>
-        <div className={styles.number}>hello@micael.com</div>
+        <div className={styles.number}>sohanur25800@gmail.com</div>
       </div>
 
       {status ? (

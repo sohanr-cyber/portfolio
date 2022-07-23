@@ -7,9 +7,11 @@ import Navbar from "../components/Navbar";
 import Portfolio from "../components/Portfolio";
 import Services from "../components/Services";
 import styles from "../styles/Home.module.css";
-import { getProjects } from "../services";
+import { getProjects, getTeches } from "../services";
+import Footer from "../components/Footer";
+import About from "../components/About";
 
-export default function Home({ projects }) {
+export default function Home({ projects, teches }) {
   console.log(projects);
   return (
     <div className={styles.container}>
@@ -22,21 +24,25 @@ export default function Home({ projects }) {
       <main className={styles.main}>
         <Navbar />
         <Introduction />
+        <About />
         <Services />
-        <Portfolio projects={projects.projects} />
+        <Portfolio
+          projects={projects.projectsConnection.edges}
+          teches={teches}
+        />
         <Experiance />
         <Contact />
+        <Footer />
       </main>
-
-      <footer className={styles.footer}></footer>
     </div>
   );
 }
 
 export async function getStaticProps() {
   const projects = (await getProjects()) || [];
+  const teches = await getTeches();
   console.log({ projects });
   return {
-    props: { projects },
+    props: { projects, teches },
   };
 }

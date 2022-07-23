@@ -8,16 +8,15 @@ const Project = ({ project }) => {
     <div className={styles.wrapper}>
       {project.video ? (
         <>
-          {" "}
           <div className={styles.video}>
-            <video controls width="90%">
+            <video controls width="99%">
               <source src={project.video.url} type="video/mp4" />
             </video>
           </div>
         </>
       ) : (
         <>
-          <Image src={project.photos[0].url} width={600} height={500} alt="" />
+          <Image src={project.photos[0].url} width={980} height={600} alt="" />
         </>
       )}
 

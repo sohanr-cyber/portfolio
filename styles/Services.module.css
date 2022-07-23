@@ -17,6 +17,7 @@
   max-width: 650px;
   gap: 15px;
   margin: 15px 0;
+  z-index: 2;
 }
 
 .flex .item {

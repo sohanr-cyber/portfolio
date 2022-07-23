@@ -6,15 +6,21 @@ const graphqlAPI = process.env.GRAPH_CMS_ENDPOINT;
 export const getProjects = async () => {
   const query = gql`
     query MyQuery {
-      projects {
-        id
-        photos {
-          url
+      projectsConnection {
+        edges {
+          node {
+            tech {
+              ... on Tech {
+                id
+                name
+              }
+            }
+            id
+            photos {
+              url
+            }
+          }
         }
-
-        tech
-
-        title
       }
     }
   `;
@@ -51,6 +57,22 @@ export const getProject = async (id) => {
   const result = await request(graphqlAPI, query, { id });
   return result;
 };
+
+export const getTeches = async () => {
+  const query = gql`
+  query MyQuery {
+  teches {
+    id
+    name
+  }
+}
+
+`;
+
+const result = await request(graphqlAPI, query);
+console.log({ result });
+return result;
+}
 
 export const submitComment = async (obj) => {
   try {

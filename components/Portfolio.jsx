@@ -1,25 +1,36 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../styles/Portfolio.module.css";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useRouter } from "next/router";
 
-const Portfolio = ({ projects }) => {
+const Portfolio = ({ projects, teches }) => {
   const [currentTech, setCurrentTech] = useState("All");
   const router = useRouter();
-  console.log(projects);
+  const [AllProjects, setAllProjects] = useState([]);
 
-  const techs = () => {
-    let allTech = ["All"];
-    projects.forEach((project) => {
-      project.tech?.forEach((tech, index) => {
-        !allTech.includes(tech) && allTech.push(tech);
+  useEffect(() => {
+    let projectslist = [];
+    projects.forEach((item) => {
+      projectslist.push({
+        ...item.node,
+        tech: item.node.tech.map((i) => i.name),
       });
     });
-    return allTech;
+    setAllProjects(projectslist);
+  }, []);
+
+  const filter = (tech) => {
+    let projectslist = [];
+    projects.forEach((item) => {
+      projectslist.push({
+        ...item.node,
+        tech: item.node.tech.map((i) => i.name),
+      });
+    });
+    setAllProjects(projectslist.filter((p) => p.tech.includes(tech.name)));
   };
 
-  console.log(projects);
   return (
     <div className={styles.wrapper} id="Portfolio">
       {/* <div className={styles.container}> */}
@@ -28,63 +39,40 @@ const Portfolio = ({ projects }) => {
       </div>
 
       <div className={styles.flex}>
-        {techs().map((tech) => (
+        {[...teches.teches].reverse().map((tech) => (
           <div
             className={styles.item}
-            onClick={() => setCurrentTech(tech)}
+            onClick={() => {
+              setCurrentTech(tech.name);
+              filter(tech);
+            }}
             style={{
-              color: `${currentTech == tech ? "white" : ""}`,
+              color: `${currentTech == tech.name ? "white" : ""}`,
             }}
           >
-            {tech}
+            {tech.name}
           </div>
         ))}
       </div>
       <div className={`${styles.flex} ${styles.projects}`}>
-        {currentTech != "All"
-          ? projects
-              .filter((project) => project.tech.includes(currentTech))
-              .map((i, k) => (
-                <div
-                  className={styles.card}
-                  onClick={() => router.push(`/project/${i.id}`)}
-                >
-                  <div className={styles.pic}>
-                    <Image
-                      src={i.photos[0].url}
-                      width={170}
-                      height={170}
-                      alt=""
-                      className={styles.image}
-                    />
-                  </div>
-                  <div className={styles.info}>
-                    <div className={styles.name}>{i.title}</div>
-                    {/* <div className={styles.details}>
-                A Modern UI/UX Portfolio website
-              </div> */}
-                  </div>
-                </div>
-              ))
-          : projects.map((i, k) => (
-              <div
-                className={styles.card}
-                onClick={() => router.push(`/project/${i.id}`)}
-              >
-                <Image
-                  src={i.photos[0].url}
-             
-                   width={170}
-                  height={170}    alt=""
-                  className={styles.image}
-                />
+        {AllProjects.map((i, k) => (
+          <div
+            className={styles.card}
+            onClick={() => router.push(`/project/${i.id}`)}
+          >
+            <Image
+              src={i.photos[0].url}
+              width={170}
+              height={170}
+              alt=""
+              className={styles.image}
+            />
 
-                <div className={styles.info}>
-                  <div className={styles.name}>{i.title}</div>
-          
-                </div>
-              </div>
-            ))}
+            <div className={styles.info}>
+              <div className={styles.name}>{i.title}</div>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );

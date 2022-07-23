@@ -1,32 +1,37 @@
 import React from "react";
 import styles from "../styles/Services.module.css";
 import Image from "next/image";
-
-const services = () => {
+import { services } from "../data";
+const Services = () => {
   return (
-    <div className={styles.wrapper}>
+    <div
+      className={styles.wrapper}
+      style={{
+        backgroundImage: "url('/assets/wave2.jpg')",
+        backgroundPosition: "left",
+        backgroundOrigin: "content",
+        zIndex: "-1",
+      }}
+    >
       <div className={styles.heading}>
         My Awesome <span>Services</span>
       </div>
       <div className={styles.flex}>
-        {[1, 2, 3, 3].map((i) => (
+        {services.map((service) => (
           <div className={styles.item}>
             <div className={styles.icon}>
-              <Image src="/assets/about01.png" width="110px" height="110px" />
+              <Image src={service.image} width="100px" height="90px" />
             </div>
-            <div className={styles.title}>Backend Developer</div>
-            <div className={styles.sortdetails}>
-              I amd a backend developer with a passion for building beautiful
-              and functional we applications
-            </div>
+            <div className={styles.title}>{service.title}</div>
+            <div className={styles.sortdetails}>{service.description}</div>
           </div>
         ))}
       </div>
       <div className={styles.btn}>
-        <a href="">Download Resume</a>
+        <a href="/assets/resume-f.pdf">Download Resume</a>
       </div>
     </div>
   );
 };
 
-export default services;
+export default Services;
