@@ -39,7 +39,7 @@ const Portfolio = ({ projects, teches }) => {
       </div>
 
       <div className={styles.flex}>
-        {[...teches.teches].reverse().map((tech) => (
+        {[...teches.teches].map((tech) => (
           <div
             className={styles.item}
             onClick={() => {

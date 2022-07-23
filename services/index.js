@@ -60,19 +60,18 @@ export const getProject = async (id) => {
 
 export const getTeches = async () => {
   const query = gql`
-  query MyQuery {
-  teches {
-    id
-    name
-  }
-}
+    query MyQuery {
+      teches(orderBy: name_ASC) {
+        id
+        name
+      }
+    }
+  `;
 
-`;
-
-const result = await request(graphqlAPI, query);
-console.log({ result });
-return result;
-}
+  const result = await request(graphqlAPI, query);
+  console.log({ result });
+  return result;
+};
 
 export const submitComment = async (obj) => {
   try {

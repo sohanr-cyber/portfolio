@@ -5,10 +5,11 @@ const About = () => {
   return (
     <div
       className={styles.wrapper}
+      id="About"
       style={{
         backgroundImage: "url('/assets/wave3.jpg')",
         backgroundPosition: "left",
-        backgroundOrigin:"padding-box",
+        backgroundOrigin: "padding-box",
         zIndex: "-1",
       }}
     >

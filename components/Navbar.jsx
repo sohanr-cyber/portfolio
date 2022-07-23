@@ -21,8 +21,10 @@ const Navbar = () => {
           </div>
         </Link>
 
-        <Link activeClass="active" to="Navbar" spy={true} smooth={true}>
-          <div className={styles.item}>About</div>
+        <Link activeClass="active" to="About" spy={true} smooth={true}>
+          <div className={styles.item} onClick={() => router.push("/#about")}>
+            About
+          </div>
         </Link>
 
         <Link activeClass="active" to="Portfolio" spy={true} smooth={true}>
@@ -56,7 +58,9 @@ const Navbar = () => {
           </Link>
 
           <Link activeClass="active" to="Navbar" spy={true} smooth={true}>
-            <div className={styles.item}>About</div>
+            <div className={styles.item} onClick={() => router.push("/#about")}>
+              About
+            </div>
           </Link>
 
           <Link activeClass="active" to="Portfolio" spy={true} smooth={true}>
