@@ -1,8 +1,10 @@
 import Image from "next/image";
 import React from "react";
 import styles from "../styles/Footer.module.css";
+import { useRouter } from "next/router";
 
 const Footer = () => {
+  const router = useRouter();
   return (
     <div className={styles.wrapper}>
       <h1>Connect With me</h1>

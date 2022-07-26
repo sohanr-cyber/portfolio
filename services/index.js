@@ -16,6 +16,7 @@ export const getProjects = async () => {
               }
             }
             id
+            title
             photos {
               url
             }
