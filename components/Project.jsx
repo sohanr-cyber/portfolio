@@ -2,8 +2,10 @@ import React from "react";
 import styles from "../styles/Project.module.css";
 import ImageScroller from "react-image-scroller";
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 const Project = ({ project }) => {
+  const router = useRouter();
   return (
     <div className={styles.wrapper}>
       {project.video ? (
@@ -32,7 +34,8 @@ const Project = ({ project }) => {
         <>
           {" "}
           <div className={styles.link}>
-            github:<span>{project.git}</span>
+            github:
+            <span onClick={() => router.push(project.git)}>{project.git}</span>
           </div>
         </>
       )}
@@ -40,7 +43,10 @@ const Project = ({ project }) => {
         <>
           {" "}
           <div className={styles.link}>
-            preview:<span>{project.preview}</span>
+            preview:
+            <span onClick={() => router.push(project.preview)}>
+              {project.preview}
+            </span>
           </div>
         </>
       )}
