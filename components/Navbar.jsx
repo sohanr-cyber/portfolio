@@ -4,13 +4,17 @@ import { Link } from "react-scroll";
 import { useRouter } from "next/router";
 import MenuIcon from "@mui/icons-material/Menu";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
-
+import { motion } from "framer-motion";
 const Navbar = () => {
   const router = useRouter();
   const [open, setOpen] = useState(false);
 
   return (
-    <div className={styles.wrapper}>
+    <motion.div
+      initial={{ opacity: 0, y: -10 }}
+      whileInView={{ opacity: 1, y: 0, transition: { duration: 1.5 } }}
+      className={styles.wrapper}
+    >
       <div className={styles.logo} onClick={() => router.push("/")}>
         PortFolio
       </div>
@@ -88,7 +92,7 @@ const Navbar = () => {
           <MenuIcon onClick={() => setOpen(true)} />
         </div>
       )}
-    </div>
+    </motion.div>
   );
 };
 

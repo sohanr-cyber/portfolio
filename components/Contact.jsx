@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import styles from "../styles/Contact.module.css";
+import { motion } from "framer-motion";
 
 import axios from "axios";
 
@@ -31,7 +32,12 @@ const Contact = () => {
   };
 
   return (
-    <div className={styles.wrapper} id="Contact">
+    <motion.div
+      initial={{ opacity: 0.1, y: 10 }}
+      whileInView={{ opacity: 1, y: 0, transition: { duration: 1 } }}
+      className={styles.wrapper}
+      id="Contact"
+    >
       <h1 className={styles.heading}>Take a Coffe & Chat With Me</h1>
       <div className={styles.phone}>
         <div className={styles.logo}>
@@ -82,7 +88,7 @@ const Contact = () => {
           </form>
         </div>
       )}
-    </div>
+    </motion.div>
   );
 };
 

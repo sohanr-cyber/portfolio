@@ -23,12 +23,12 @@ const Introduction = () => {
       <motion.div
         className={`${styles.circle} ${styles.circle1}`}
         whileInView={{ opacity: [0, 1], scale: [0, 1] }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 1.5 }}
       ></motion.div>
       <motion.div
         className={`${styles.circle} ${styles.circle2}`}
         whileInView={{ opacity: [0, 1], scale: [0, 1] }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 2 }}
       ></motion.div>
     </div>
   );

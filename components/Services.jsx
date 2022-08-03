@@ -2,6 +2,7 @@ import React from "react";
 import styles from "../styles/Services.module.css";
 import Image from "next/image";
 import { services } from "../data";
+import { motion } from "framer-motion";
 const Services = () => {
   return (
     <div
@@ -18,13 +19,17 @@ const Services = () => {
       </div>
       <div className={styles.flex}>
         {services.map((service) => (
-          <div className={styles.item}>
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0, transition: { duration: 1 } }}
+            className={styles.item}
+          >
             <div className={styles.icon}>
               <Image src={service.image} width="100px" height="90px" />
             </div>
             <div className={styles.title}>{service.title}</div>
             <div className={styles.sortdetails}>{service.description}</div>
-          </div>
+          </motion.div>
         ))}
       </div>
       <div className={styles.btn}>
