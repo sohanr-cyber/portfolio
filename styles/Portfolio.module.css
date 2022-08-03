@@ -52,12 +52,13 @@
 }
 
 .projects {
-  flex-wrap: wrap;
-  justify-content: center;
+  display: flex;
+  justify-content: flex-start;
   align-items: center;
-  max-height: 93vh;
   padding: 15px 0;
-  overflow: scroll;
+  overflow-x: scroll;
+  width: 100%;
+  gap: 15px;
 }
 
 .projects .card {
@@ -73,6 +74,7 @@
   padding: 5px;
   max-width: 170px;
   cursor: pointer;
+  min-width: 150px;
 }
 
 .card .info {
