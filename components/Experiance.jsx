@@ -20,8 +20,8 @@ const Experiance = () => {
               strokeWidth={9}
               styles={buildStyles({
                 textColor: "red",
-                pathColor: "lightgrey",
-                trailColor: "gold",
+                pathColor: "gold",
+                trailColor: "lightgrey",
               })}
             >
               <div className={styles.imageWrapper}>
