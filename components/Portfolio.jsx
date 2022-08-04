@@ -20,6 +20,8 @@ const Portfolio = ({ projects, teches }) => {
     setAllProjects(projectslist);
   }, []);
 
+
+  
   const filter = (tech) => {
     let projectslist = [];
     projects.forEach((item) => {
@@ -63,7 +65,11 @@ const Portfolio = ({ projects, teches }) => {
           <AnimatePresence>
             <motion.div
               initial={{ opacity: 0.1, x: 100 }}
-              whileInView={{ opacity: 1, x: 0, transition: { duration: 1 } }}
+              whileInView={{
+                opacity: 1,
+                x: 0,
+                transition: { duration: 1 },
+              }}
               className={styles.card}
               onClick={() => router.push(`/project/${i.id}`)}
             >

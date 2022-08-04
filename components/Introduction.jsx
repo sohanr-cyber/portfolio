@@ -15,9 +15,7 @@ const Introduction = () => {
         // transition={{ duration: 1, ease: "easeInOut" }}
         >
           <div className={styles.name}>Md Sohanur Rahman Sohan</div>
-          <div className={styles.work}>
-            Full-stack Developer & UI/UX Designer
-          </div>
+          <div className={styles.work}>Full-stack Developer</div>
         </motion.div>
       </motion.div>
       <motion.div
